@@ -19,16 +19,16 @@ function searchRange(nums: number[], target: number): number[] {
   if (elIndex < 0) {
     return [-1, -1];
   }
-  
+
   let leftIndex = elIndex, rightIndex = elIndex;
-  
+
   while (nums[leftIndex] === target) {
     leftIndex--;
   }
   while (nums[rightIndex] === target) {
     rightIndex++;
   }
-  
+
   return [leftIndex + 1, rightIndex - 1];
   // NOTE: 偷懒做法，利用已有的 [].indexOf(), [].lastIndexOf()
   // return [nums.indexOf(target), nums.lastIndexOf(target)];
