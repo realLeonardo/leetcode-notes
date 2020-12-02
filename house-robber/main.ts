@@ -17,14 +17,12 @@
  * 思路：动态规划
  */
 function rob(nums: number[]): number {
-  const len: number = nums.length;
+  const length: number = nums.length;
 
-  if (len === 0) {
+  if (length === 0) {
     return 0;
-  } else if (len === 1) {
+  } else if (length === 1) {
     return nums[0];
-  } else if (len === 2) {
-    return Math.max(nums[0], nums[1]);
   }
 
   const dp: number[] = [];
@@ -33,8 +31,9 @@ function rob(nums: number[]): number {
 
   let result = dp[1];
 
-  for (let i = 2; i < nums.length; ++i) {
-    dp[i] = maxItem(dp, 0, i-2) + nums[i];
+  for (let i = 2; i < length; ++i) {
+    dp[i] = maxItem(dp, 0, i - 2) + nums[i];
+
     if (dp[i] > result) {
       result = dp[i];
     }
@@ -43,16 +42,19 @@ function rob(nums: number[]): number {
   return result;
 }
 
-function maxItem(arr: number[], from: number, to: number): number{
-  let result = arr[from]
+/**
+ * 找到数组某个给定范围内的最大值
+ */
+function maxItem(arr: number[], from: number, to: number): number {
+  let result = arr[from];
 
-  for(;from <= to; ++from){
-    if(arr[from]>result){
-      result = arr[from]
+  for (; from <= to; ++from) {
+    if (arr[from] > result) {
+      result = arr[from];
     }
   }
 
-  return result
+  return result;
 }
 
-console.log(rob([2,7,9,3,1]));
+console.log(rob([2, 7, 9, 3, 1]));
