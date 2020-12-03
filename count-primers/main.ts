@@ -26,7 +26,7 @@ function countPrimes(n: number): number {
 
   for (let i = 2; i < n; ++i) {
     let temp = 0;
-    
+
     /**
      * 表示质数的倍数为非质数
      * TODO: 为什么这里从 i*i 开始，而不是 i*2?
