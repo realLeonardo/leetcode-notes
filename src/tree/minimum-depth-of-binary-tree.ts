@@ -10,13 +10,14 @@ import "../../libs/TreeNode.ts";
 import "../../libs/Queue.ts";
 
 /**
- * 
+ * 思路: BFS算法
  */
 function minDepth(root: TreeNode | null): number {
   if (root === null) {
     return 0;
   }
-
+  
+  // NOTE: 用于临时存储的队列
   let nodeQueue: Queue<TreeNode> = new Queue<TreeNode>();
   nodeQueue.push(root);
 
@@ -31,6 +32,7 @@ function minDepth(root: TreeNode | null): number {
         continue;
       }
 
+      // NOTE: 遇到叶子节点时终止
       if (t.left === null && t.right === null) {
         return depth;
       }
