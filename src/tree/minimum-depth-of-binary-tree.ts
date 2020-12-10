@@ -16,7 +16,7 @@ function minDepth(root: TreeNode | null): number {
   if (root === null) {
     return 0;
   }
-  
+
   // NOTE: 用于临时存储的队列
   let nodeQueue: Queue<TreeNode> = new Queue<TreeNode>();
   nodeQueue.push(root);
