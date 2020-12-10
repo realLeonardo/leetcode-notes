@@ -13,8 +13,8 @@
  * 思路：
  * 无
  */
+// TODO:
 function merge(intervals: number[][]): number[][] {
-  // TODO:
 }
 
 console.log(merge([[1, 3], [2, 6], [8, 10], [15, 18]]));
