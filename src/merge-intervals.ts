@@ -9,12 +9,38 @@
  * [[1,4],[4,5]] -> [[1,5]]
  */
 
-/**
- * 思路：
- * 无
- */
-// TODO:
-function merge(intervals: number[][]): number[][] {
-}
+{
+  /**
+   * 思路：
+   * 两个指针遍历，如果第一个数组的尾数大于等于第二个数组的首数，则尝试合并
+   * 
+   */
+  function merge(intervals: number[][]): number[][] {
+    if (intervals.length === 1) {
+      return intervals;
+    }
 
-console.log(merge([[1, 3], [2, 6], [8, 10], [15, 18]]));
+    // NOTE: 先排序
+    intervals.sort((a, b) => a[0] - b[0]);
+
+    let idx1 = 0, idx2 = 1;
+
+    while (idx2 < intervals.length) {
+      let first = intervals[idx1], second = intervals[idx2];
+
+      if (first[1] >= second[0]) {
+        first[1] = second[1] > first[1] ? second[1] : first[1];
+        intervals.splice(idx2, 1);
+        intervals[idx1] = first;
+      } else {
+        ++idx1;
+        ++idx2;
+      }
+    }
+
+    return intervals;
+  }
+
+  console.log(merge([[1, 3], [2, 6], [8, 10], [15, 18]]));
+  console.log(merge([[1, 4], [5, 6]]));
+}
