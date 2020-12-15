@@ -6,8 +6,8 @@
  * 说明：叶子节点是指没有子节点的节点。
  */
 
-import "../../libs/TreeNode.ts";
-import "../../libs/Queue.ts";
+import "../libs/TreeNode.ts";
+import "../libs/Queue.ts";
 
 /**
  * 思路: BFS算法

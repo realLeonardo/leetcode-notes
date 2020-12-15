@@ -4,7 +4,7 @@
  * Invert a binary tree.
  */
 
-import "../../libs/TreeNode.ts";
+import "../libs/TreeNode.ts";
 
 /**
  * 

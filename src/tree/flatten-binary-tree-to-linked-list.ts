@@ -4,7 +4,7 @@
  * Given a binary tree, flatten it to a linked list in-place.
  */
 
-import "../../libs/TreeNode.ts";
+import "../libs/TreeNode.ts";
 
 /**
  * 思路：
