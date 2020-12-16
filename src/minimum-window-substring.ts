@@ -14,11 +14,15 @@
    * 如何判断是否符合 “s中涵盖t所有字符”: 用map
    */
   function minWindow(s: string, t: string): string {
+    if (s.length < t.length) {
+      return "";
+    }
+
     let left = 0, right = 0;
     let finalLeft = -1, finalLength = 0;
 
-    const windows: Map<String, Number> = new Map();
     const needs: Map<String, Number> = new Map();
+    const windows: Map<String, Number> = new Map();
 
     for (const n of t) {
       let count = needs.get(n);
@@ -29,7 +33,7 @@
       needs.set(n, (count as number) + 1);
     }
 
-    while (right <= s.length) {
+    while (right < s.length) {
       if (!needs.has(s[right])) {
         ++right;
         continue;
@@ -55,22 +59,34 @@
 
       ++right;
 
-      // NOTE: 找到符合的子串
+      // NOTE: 未找到符合的子串
       if (!isContain) {
         continue;
+      }
+
+      if (finalLength == 0 || right - left < finalLength) {
+        finalLeft = left;
+        finalLength = right - left;
       }
 
       // NOTE: 找到最优子串
       while (isContain) {
         if (!needs.has(s[left])) {
           ++left;
+
+          // NOTE: 更新记录
+          if (finalLength == 0 || right - left < finalLength) {
+            finalLeft = left;
+            finalLength = right - left;
+          }
           continue;
         }
 
         windows.set(s[left], (windows.get(s[left]) as number) - 1);
         ++left;
 
-        for (let i of needs.keys()) {
+        // NOTE: check the containable
+        for (const i of needs.keys()) {
           if (
             !windows.get(i) ||
             (windows.get(i) as number) < (needs.get(i) as number)
@@ -79,23 +95,15 @@
             break;
           }
         }
-      }
 
-      // NOTE: 还原最优字串
-      --left;
-      windows.set(s[left], (windows.get(s[left]) as number) + 1);
-
-      // NOTE: 更新记录
-      if (finalLength == 0 || right - left < finalLength) {
-        finalLeft = left;
-        finalLength = right - left;
+        if (isContain) {
+          // NOTE: 更新记录
+          if (finalLength == 0 || right - left < finalLength) {
+            finalLeft = left;
+            finalLength = right - left;
+          }
+        }
       }
-
-      // NOTE: left 向前滑动
-      if (windows.has(s[left])) {
-        windows.set(s[left], (windows.get(s[left]) as number) - 1);
-      }
-      ++left;
     }
 
     return s.substr(finalLeft, finalLength);
