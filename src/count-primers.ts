@@ -1,8 +1,8 @@
 /**
  * 204. Count Primes: https://leetcode-cn.com/problems/count-primes/
- * 
+ *
  * Count the number of prime numbers less than a non-negative number, n.
- * 
+ *
  * 10 -> 4: 2,3,5,7
  * 0 -> 0
  * 1 -> 0
@@ -55,3 +55,5 @@ function countPrimes(n: number): number {
 
 console.log(countPrimes(10));
 console.log(countPrimes(13));
+
+export {};

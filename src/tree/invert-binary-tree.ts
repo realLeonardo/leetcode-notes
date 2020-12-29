@@ -1,13 +1,13 @@
 /**
  * 226. Invert Binary Tree: https://leetcode-cn.com/problems/invert-binary-tree/
- * 
+ *
  * Invert a binary tree.
  */
 
 import "../libs/TreeNode.ts";
 
 /**
- * 
+ *
  */
 function invertTree(root: TreeNode | null): TreeNode | null {
   if (root === null) {
@@ -26,3 +26,5 @@ function invertTree(root: TreeNode | null): TreeNode | null {
 }
 
 // TODO: 如何测试呢？？？
+
+export {};

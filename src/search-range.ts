@@ -1,10 +1,10 @@
 /**
  * 34. Find First and Last Position of Element in Sorted Array: https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/
- * 
+ *
  * Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
  * If target is not found in the array, return [-1, -1].
  * Follow up: Could you write an algorithm with O(log n) runtime complexity?
- * 
+ *
  * 1. nums = [5,7,7,8,8,10], target = 8 -> [3, 4]
  * 2. nums = [5,7,7,8,8,10], target = 6 -> [-1, -1]
  */
@@ -20,7 +20,8 @@ function searchRange(nums: number[], target: number): number[] {
     return [-1, -1];
   }
 
-  let leftIndex = elIndex, rightIndex = elIndex;
+  let leftIndex = elIndex,
+    rightIndex = elIndex;
 
   while (nums[leftIndex] === target) {
     leftIndex--;
@@ -37,15 +38,15 @@ function searchRange(nums: number[], target: number): number[] {
 /**
  * 获取数组里目标值的下标，如果不存在则返回-1
  * @param nums
- * @param target 
- * @param from 
- * @param to 
+ * @param target
+ * @param from
+ * @param to
  */
 function binarySearch(
   nums: number[],
   target: number,
   from: number,
-  to: number,
+  to: number
 ): number {
   if (to > nums.length - 1) {
     to = nums.length;
@@ -71,3 +72,5 @@ function binarySearch(
 }
 
 console.log(searchRange([1, 2, 2, 2, 5], 1));
+
+export {};

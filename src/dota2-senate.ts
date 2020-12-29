@@ -1,6 +1,6 @@
 /**
  * 649. Dota2 参议院: https://leetcode-cn.com/problems/dota2-senate/
- * 
+ *
  * 在每一轮中，每一位参议员都可以行使两项权利中的一项：
  * 1. 禁止一名参议员的权利：参议员可以让另一位参议员在这一轮和随后的几轮中丧失所有的权利。
  * 2. 宣布胜利：如果参议员发现有权利投票的参议员都是同一个阵营的，他可以宣布胜利并决定在游戏中的有关变化。
@@ -47,3 +47,5 @@
   console.log(predictPartyVictory("RRDDD")); // R
   console.log(predictPartyVictory("DRRD")); // D
 }
+
+export {};

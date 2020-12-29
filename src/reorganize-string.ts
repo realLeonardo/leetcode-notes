@@ -1,9 +1,9 @@
 /**
  * 767. Reorganize String: https://leetcode-cn.com/problems/reorganize-string/
- * 
+ *
  * Given a string S, check if the letters can be rearranged so that two characters that are adjacent to each other are not the same.
  * If possible, output any possible result.  If not possible, return the empty string.
- * 
+ *
  * 1. "aab" -> "aba"
  * 2. "aaab" -> ""
  * 3. "babaa" -> "ababa"
@@ -52,9 +52,7 @@ function reorganizeString(s: string): string {
   });
 
   // NOTE: 判断是否为无法重构的字符串
-  if (
-    charSet.length === 0 || charSet[0].count > Math.ceil(strLength / 2)
-  ) {
+  if (charSet.length === 0 || charSet[0].count > Math.ceil(strLength / 2)) {
     return "";
   }
 
@@ -81,5 +79,7 @@ console.log(reorganizeString("babaa") === "ababa");
 console.log(reorganizeString("abbabbaaab") === "ababababab");
 console.log(reorganizeString("xogbmcjjie") === "jgjibmcoex");
 console.log(
-  reorganizeString("ogccckcwmbmxtsbmozli") === "cocgcickmlmsmtbwbxoz",
+  reorganizeString("ogccckcwmbmxtsbmozli") === "cocgcickmlmsmtbwbxoz"
 );
+
+export {};

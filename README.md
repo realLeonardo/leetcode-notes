@@ -5,8 +5,8 @@
 
 ## Why TypeScript
 
-* ts 是强类型语言
-* ts + deno 可以直接 run
+- ts 是强类型语言
+- ts + deno 可以直接 run
 
 ---
 

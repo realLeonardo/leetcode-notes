@@ -1,12 +1,12 @@
 /**
  * 72. Edit Distance: https://leetcode-cn.com/problems/edit-distance/
- * 
+ *
  * Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2.
  * You have the following three operations permitted on a word:
  * - Insert a character
  * - Delete a character
  * - Replace a character
- * 
+ *
  * "horse", "ros" -> 3
  * "intention", "execution" -> 5
  */
@@ -44,3 +44,5 @@ function minDistance(word1: string, word2: string): number {
 }
 
 console.log(minDistance("horse", "ros"));
+
+export {};

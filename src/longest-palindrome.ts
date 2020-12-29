@@ -1,8 +1,8 @@
 /**
  * 5. Longest Palindromic Substring: https://leetcode-cn.com/problems/longest-palindromic-substring/
- * 
+ *
  * Given a string s, return the longest palindromic substring in s.
- * 
+ *
  * 1. "babad" -> "bab"
  * 2. "cbbd" -> "bb"
  * 3. "a" -> "a"
@@ -10,7 +10,7 @@
 
 /**
  * 感觉有点难啊？涉及到了动态规划？
- * 
+ *
  * 1. 暴力解法：穷举出所有子串，并判断其是否为回文串，取其中最长的作为结果
  */
 function longestPalindrome(s: string): string {
@@ -94,3 +94,5 @@ function longestPalindromeDP(s: string): string {
 
 // NOTE: just for test
 console.log(longestPalindromeDP("babad"));
+
+export {};

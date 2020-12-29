@@ -1,7 +1,7 @@
 /**
  * 98. Validate Binary Search Tree: https://leetcode-cn.com/problems/validate-binary-search-tree/
  * Given the root of a binary tree, determine if it is a valid binary search tree (BST).
- * 
+ *
  * A valid BST is defined as follows:
  * - The left subtree of a node contains only nodes with keys less than the node's key.
  * - The right subtree of a node contains only nodes with keys greater than the node's key.
@@ -17,7 +17,7 @@ function isValidBST(root: TreeNode | null): boolean {
 function validBST(
   root: TreeNode | null,
   min: TreeNode | null,
-  max: TreeNode | null,
+  max: TreeNode | null
 ): boolean {
   if (root === null) {
     return true;
@@ -30,6 +30,7 @@ function validBST(
     return false;
   }
 
-  return validBST(root.left, min, root) &&
-    validBST(root.right, root, max);
+  return validBST(root.left, min, root) && validBST(root.right, root, max);
 }
+
+export {};
