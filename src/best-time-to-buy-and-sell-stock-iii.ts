@@ -28,7 +28,7 @@
         dp[i][k][0] = Math.max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i]);
         dp[i][k][1] = Math.max(
           dp[i - 1][k][1],
-          dp[i - 1][k - 1][0] - prices[i]
+          dp[i - 1][k - 1][0] - prices[i],
         );
       }
     }

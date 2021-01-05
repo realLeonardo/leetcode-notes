@@ -46,7 +46,7 @@ function binarySearch(
   nums: number[],
   target: number,
   from: number,
-  to: number
+  to: number,
 ): number {
   if (to > nums.length - 1) {
     to = nums.length;

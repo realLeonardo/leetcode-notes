@@ -17,7 +17,7 @@ function isValidBST(root: TreeNode | null): boolean {
 function validBST(
   root: TreeNode | null,
   min: TreeNode | null,
-  max: TreeNode | null
+  max: TreeNode | null,
 ): boolean {
   if (root === null) {
     return true;

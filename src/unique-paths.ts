@@ -17,29 +17,32 @@ interface Position {
   y: number;
 }
 
-const results: Position[][] = [];
+let resultsCount = 0;
 
 function uniquePaths(m: number, n: number): number {
+  resultsCount = 0;
   const final: Position = { x: m, y: n };
   const steps: Position[] = [{ x: 1, y: 1 }];
 
   backtrack(steps, final);
 
-  return results.length;
+  return resultsCount;
 }
 
 function backtrack(steps: Position[], final: Position): void {
-  let current = steps[steps.length - 1];
+  const current = steps[steps.length - 1];
 
   // NOTE: 结束条件
   if (current.x === final.x && current.y === final.y) {
-    results.push(steps);
+    resultsCount++;
     return;
   }
 
   for (let op of ["x", "y"]) {
-    // NOTE: 深拷贝
-    current = JSON.parse(JSON.stringify(steps[steps.length - 1]));
+    const current = {
+      x: steps[steps.length - 1].x,
+      y: steps[steps.length - 1].y,
+    };
 
     if (op === "x") {
       current.x++;
@@ -56,5 +59,8 @@ function backtrack(steps: Position[], final: Position): void {
 }
 
 console.log(uniquePaths(3, 7));
+console.log(uniquePaths(3, 2));
+// FIXME: 耗时过长
+console.log(uniquePaths(23, 12));
 
 export {};

@@ -79,7 +79,7 @@ console.log(reorganizeString("babaa") === "ababa");
 console.log(reorganizeString("abbabbaaab") === "ababababab");
 console.log(reorganizeString("xogbmcjjie") === "jgjibmcoex");
 console.log(
-  reorganizeString("ogccckcwmbmxtsbmozli") === "cocgcickmlmsmtbwbxoz"
+  reorganizeString("ogccckcwmbmxtsbmozli") === "cocgcickmlmsmtbwbxoz",
 );
 
 export {};

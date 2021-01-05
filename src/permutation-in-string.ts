@@ -80,8 +80,8 @@ console.log(checkInclusion("ba", "beidbbaooo"));
 console.log(
   checkInclusion(
     "trinitrophenylmethylnitramine",
-    "dinitrophenylhydrazinetrinitrophenylmethylnitramine"
-  )
+    "dinitrophenylhydrazinetrinitrophenylmethylnitramine",
+  ),
 );
 
 export {};
