@@ -8,58 +8,44 @@
  * m=3, n=7 -> 28
  * m=3, n=2 -> 3
  */
-
-/**
- * 思路: 回溯法 backtrack
- */
-interface Position {
-  x: number;
-  y: number;
-}
-
-let resultsCount = 0;
-
 function uniquePaths(m: number, n: number): number {
-  resultsCount = 0;
-  const final: Position = { x: m, y: n };
-  const steps: Position[] = [{ x: 1, y: 1 }];
-
-  backtrack(steps, final);
-
-  return resultsCount;
-}
-
-function backtrack(steps: Position[], final: Position): void {
-  const current = steps[steps.length - 1];
-
-  // NOTE: 结束条件
-  if (current.x === final.x && current.y === final.y) {
-    resultsCount++;
-    return;
+  // 动态规划
+  const deps: number[][] = [];
+  for (let i = 0; i < m + 1; ++i) {
+    deps.push([0]);
   }
 
-  for (let op of ["x", "y"]) {
-    const current = {
-      x: steps[steps.length - 1].x,
-      y: steps[steps.length - 1].y,
-    };
-
-    if (op === "x") {
-      current.x++;
-    } else {
-      current.y++;
-    }
-
-    if (current.x > final.x || current.y > final.y) {
-      continue;
-    }
-
-    backtrack([...steps, current], final);
+  deps[1][1] = 1;
+  for (let i = 2; i <= m; ++i) {
+    deps[i][1] = 1;
   }
+  for (let j = 2; j <= n; ++j) {
+    deps[1][j] = 1;
+  }
+
+  for (let i = 2; i <= m; ++i) {
+    for (let j = 2; j <= n; ++j) {
+      deps[i][j] = deps[i - 1][j] + deps[i][j - 1];
+    }
+  }
+
+  return deps[m][n];
+  // 组合数学
+  // let result = 1;
+  // for (let i = n; i <= m + n - 2; ++i) {
+  //   result *= i;
+  // }
+  // for (let i = 1; i <= m - 1; ++i) {
+  //   result /= i;
+  // }
+
+  // return result;
 }
 
+console.log(uniquePaths(1, 1));
 console.log(uniquePaths(3, 7));
 console.log(uniquePaths(3, 2));
+console.log(uniquePaths(3, 3));
 // FIXME: 耗时过长
 console.log(uniquePaths(23, 12));
 
