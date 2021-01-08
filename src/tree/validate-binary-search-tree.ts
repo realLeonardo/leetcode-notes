@@ -7,8 +7,7 @@
  * - The right subtree of a node contains only nodes with keys greater than the node's key.
  * - Both the left and right subtrees must also be binary search trees.
  */
-
-import "../libs/TreeNode.ts";
+import TreeNode from "../libs/TreeNode";
 
 function isValidBST(root: TreeNode | null): boolean {
   return validBST(root, null, null);

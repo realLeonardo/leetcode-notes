@@ -1,7 +1,7 @@
 /**
  * Queue.ts
  */
-class Queue<T> {
+export default class Queue<T> {
   public size: number;
   private _queue: T[];
 

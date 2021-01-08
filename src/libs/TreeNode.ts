@@ -2,7 +2,7 @@
  * TreeNode class
  * copy from leetcode
  */
-class TreeNode {
+export default class TreeNode {
   val: number;
   left: TreeNode | null;
   right: TreeNode | null;
