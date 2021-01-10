@@ -46,7 +46,6 @@ console.log(uniquePaths(1, 1));
 console.log(uniquePaths(3, 7));
 console.log(uniquePaths(3, 2));
 console.log(uniquePaths(3, 3));
-// FIXME: 耗时过长
 console.log(uniquePaths(23, 12));
 
 export {};
