@@ -8,7 +8,7 @@
  *
  * Follow up: Can you solve it with time complexity O(height of tree)?
  */
-import TreeNode from "../libs/TreeNode";
+import TreeNode from "../libs/TreeNode.ts";
 
 function deleteNode(root: TreeNode | null, key: number): TreeNode | null {
   if (root === null) {

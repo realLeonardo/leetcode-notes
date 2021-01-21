@@ -3,7 +3,7 @@
  *
  * Invert a binary tree.
  */
-import TreeNode from "../libs/TreeNode";
+import TreeNode from "../libs/TreeNode.ts";
 
 /**
  *

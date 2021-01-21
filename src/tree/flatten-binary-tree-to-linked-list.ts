@@ -3,7 +3,7 @@
  *
  * Given a binary tree, flatten it to a linked list in-place.
  */
-import TreeNode from "../libs/TreeNode";
+import TreeNode from "../libs/TreeNode.ts";
 
 /**
  * 思路：
