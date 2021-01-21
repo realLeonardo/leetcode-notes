@@ -1,11 +1,11 @@
 /**
  * 42. 接雨水: https://leetcode-cn.com/problems/trapping-rain-water/
- * 
+ *
  * 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。
- * 
+ *
  * [0,1,0,2,1,0,1,3,2,1,2,1] -> 6
  * [4,2,0,3,2,5] -> 9
- * 
+ *
  * 1. 先找出凹区间
  * 2. 计算每个凹区间的度
  */
@@ -21,9 +21,7 @@ function trap(height: number[]): number {
     // 找到转折点
     while (j + 1 < hLength && height[j] >= height[j + 1]) ++j;
     let endIdx = j;
-    while (
-      endIdx + 1 < hLength && height[endIdx] <= height[endIdx + 1]
-    ) {
+    while (endIdx + 1 < hLength && height[endIdx] <= height[endIdx + 1]) {
       ++endIdx;
     }
     if (endIdx !== j) {
@@ -33,13 +31,10 @@ function trap(height: number[]): number {
   }
 
   // 合并凹处
-  for (let i = 0; i < holes.length;) {
+  for (let i = 0; i < holes.length; ) {
     if (i + 1 < holes.length) {
       if (holes[i][1] === holes[i + 1][0]) {
-        if (
-          height[holes[i][0]] >= height[holes[i][1]] &&
-          height[holes[i + 1][1]] >= height[holes[i + 1][0]]
-        ) {
+        if (height[holes[i][0]] >= height[holes[i][1]] && height[holes[i + 1][1]] >= height[holes[i + 1][0]]) {
           holes[i][1] = holes[i + 1][1];
           holes.splice(i + 1, 1);
           //

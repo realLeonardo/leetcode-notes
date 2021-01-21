@@ -42,12 +42,7 @@ function searchRange(nums: number[], target: number): number[] {
  * @param from
  * @param to
  */
-function binarySearch(
-  nums: number[],
-  target: number,
-  from: number,
-  to: number,
-): number {
+function binarySearch(nums: number[], target: number, from: number, to: number): number {
   if (to > nums.length - 1) {
     to = nums.length;
   }

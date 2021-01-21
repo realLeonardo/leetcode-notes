@@ -1,11 +1,11 @@
 /**
  * 8. 字符串转换整数 (atoi): https://leetcode-cn.com/problems/string-to-integer-atoi/
- * 
+ *
  * 请你来实现一个 atoi 函数，使其能将字符串转换成整数。
- * 
+ *
  * "42" -> 42
  * "    -42" -> -42
- * 
+ *
  */
 function myAtoi(s: string): number {
   const INT_MIN = -Math.pow(2, 31);

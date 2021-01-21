@@ -1,9 +1,9 @@
 /**
  * 67. 二进制求和: https://leetcode-cn.com/problems/add-binary/
- * 
+ *
  * 给你两个二进制字符串，返回它们的和（用二进制表示）。
  * 输入为 非空 字符串且只包含数字 1 和 0。
- * 
+ *
  */
 function addBinary(a: string, b: string): string {
   let i = a.length - 1;

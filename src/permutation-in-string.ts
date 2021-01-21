@@ -77,11 +77,6 @@ function checkInclusion(s1: string, s2: string): boolean {
 }
 
 console.log(checkInclusion("ba", "beidbbaooo"));
-console.log(
-  checkInclusion(
-    "trinitrophenylmethylnitramine",
-    "dinitrophenylhydrazinetrinitrophenylmethylnitramine",
-  ),
-);
+console.log(checkInclusion("trinitrophenylmethylnitramine", "dinitrophenylhydrazinetrinitrophenylmethylnitramine"));
 
 export {};

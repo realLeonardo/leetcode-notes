@@ -49,10 +49,7 @@ function minWindow(s: string, t: string): string {
     let isContain: boolean = true;
 
     for (let i of needs.keys()) {
-      if (
-        !windows.get(i) ||
-        (windows.get(i) as number) < (needs.get(i) as number)
-      ) {
+      if (!windows.get(i) || (windows.get(i) as number) < (needs.get(i) as number)) {
         isContain = false;
         break;
       }
@@ -88,10 +85,7 @@ function minWindow(s: string, t: string): string {
 
       // NOTE: check the containable
       for (const i of needs.keys()) {
-        if (
-          !windows.get(i) ||
-          (windows.get(i) as number) < (needs.get(i) as number)
-        ) {
+        if (!windows.get(i) || (windows.get(i) as number) < (needs.get(i) as number)) {
           isContain = false;
           break;
         }

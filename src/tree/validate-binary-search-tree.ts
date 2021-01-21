@@ -13,11 +13,7 @@ function isValidBST(root: TreeNode | null): boolean {
   return validBST(root, null, null);
 }
 
-function validBST(
-  root: TreeNode | null,
-  min: TreeNode | null,
-  max: TreeNode | null,
-): boolean {
+function validBST(root: TreeNode | null, min: TreeNode | null, max: TreeNode | null): boolean {
   if (root === null) {
     return true;
   }
